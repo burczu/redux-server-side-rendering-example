@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-const App = ({ initialText }) => {
-  const [text, setText] = useState(initialText);
+const App = ({ initialText, changeText }) => (
+  <div>
+    <p>{initialText}</p>
+    <button onClick={changeText}>change text!</button>
+  </div>
+);
 
-  const handleClick = () => {
-    setText('changed in the browser!');
-  };
+const mapStateToProps = ({ initialText }) => ({
+  initialText,
+});
 
-  return (
-    <div>
-      <p>{text}</p>
-      <button onClick={handleClick}>change text!</button>
-    </div>
-  );
-};
+const mapDispatchToProps = (dispatch) => ({
+  changeText: () => dispatch({ type: 'CHANGE_TEXT' }),
+});
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
