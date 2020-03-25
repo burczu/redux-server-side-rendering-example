@@ -1,4 +1,4 @@
-# React Server Side Rendering using ExpressJS - Example App
+# React Server Side Rendering with Redux - Example App
 
 Example of the universal React app for the blog post purpose.
 
