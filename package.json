@@ -5,6 +5,10 @@
   "repository": "https://github.com/burczu/react-server-side-rendering-example.git",
   "author": "b.dybowski@gmail.com",
   "license": "MIT",
+  "scripts": {
+    "clear": "rimraf ./build",
+    "start": "npm run clear && webpack && node ./build/server.js"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "express": "^4.17.1",
